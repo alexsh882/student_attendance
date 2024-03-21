@@ -1,5 +1,4 @@
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:student_attendance/src/models/models.dart';
 
 
 part 'attendance.g.dart';
