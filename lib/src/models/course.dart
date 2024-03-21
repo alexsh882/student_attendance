@@ -13,14 +13,14 @@ class Course extends HiveObject {
   });
 
   @HiveField(0)
-  final int id;
+  int id;
 
   @HiveField(1)
-  final int year;
+  int year;
 
   @HiveField(2)
-  final String name;
+  String name;
 
   @HiveField(3)
-  final HiveList<Student> students;
+  HiveList<Student> students;
 }

@@ -19,18 +19,21 @@ class HomePage extends StatelessWidget {
                 height: 100,                
                 child: Text(
                     'Pulsa el botón de acuerdo a la acción que deseas realizar:',textAlign: TextAlign.center,)),
+            const SizedBox(height: 30),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, 'courses');
+              },
+              child: const Text('Cursos'),
+            ),
+            const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, 'attendance');
               },
-              child: const Text('Tomar asistencia'),
+              child: const Text('Tomar Asistencia'),
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, 'students');
-              },
-              child: const Text('Ver estudiantes'),
-            ),
+
           ],
         ),
       ),
