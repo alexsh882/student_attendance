@@ -5,6 +5,8 @@ class StudentPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+       
     return Scaffold(
       appBar: AppBar(
         title: const Text('Estudiantes'),
@@ -14,11 +16,11 @@ class StudentPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Add your onPressed code here!
+          Navigator.pushNamed(context, 'add-student');
         },
-        backgroundColor: Colors.blue,
+        tooltip: 'Agregar Nuevo Estudiante',
         child: const Icon(Icons.add),
-      )
+      ),
     );
   }
 }

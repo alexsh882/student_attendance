@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:student_attendance/ui/screens/screens.dart';
+import 'package:student_attendance/src/router/app_routes.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -10,12 +10,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       title: 'Asistencias App',
-      initialRoute: 'home',
-      routes: <String, WidgetBuilder>{
-        'home': (context) => const HomePage(),
-        'attendance': (context) => const AttendancePage(),
-        'students': (context) => const StudentPage()
-      },
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.routes,
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }
