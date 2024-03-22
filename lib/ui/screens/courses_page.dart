@@ -41,6 +41,8 @@ class _CoursesPageState extends State<CoursesPage> with CoursesDTO {
                         return ListTile(
                           title: Text(course?.name ?? ''),
                           subtitle: Text(course?.year.toString() ?? ''),
+                          onTap: () => Navigator.pushNamed(context, 'students',
+                              arguments: course),
                           trailing: Row(
                             mainAxisSize: MainAxisSize.min,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -106,15 +108,14 @@ class _CoursesPageState extends State<CoursesPage> with CoursesDTO {
                     if (course?.id != null) {
                       course!.name = courseController.text;
                       updateCourse(course);
-                      Navigator.pop(context);
-                      return;
+                    } else {
+                      addCourse(Course(
+                          id: courseBox.values.length + 1,
+                          name: courseController.text,
+                          year: course?.year ?? DateTime.now().year,
+                          students: HiveList<Student>(studentBox)));
                     }
-
-                    addCourse(Course(
-                        id: courseBox.values.length + 1,
-                        name: courseController.text,
-                        year: course?.year ?? DateTime.now().year,
-                        students: HiveList<Student>(studentBox)));
+                    Navigator.pop(context);
                     courseController.clear();
                   }
                 },

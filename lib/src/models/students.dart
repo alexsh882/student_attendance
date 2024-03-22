@@ -17,14 +17,14 @@ class Student extends HiveObject {
   final int id;
 
   @HiveField(1)
-  final String lastName;
+  String lastName;
 
   @HiveField(2)
-  final String firstName;
+  String firstName;
 
   @HiveField(3)
-  final int dni;
+  int dni;
 
   @HiveField(4)
-  final HiveList<Attendance> attendances;
+  HiveList<Attendance> attendances;
 }

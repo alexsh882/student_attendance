@@ -3,8 +3,8 @@ import 'package:student_attendance/src/models/models.dart';
 
 mixin StudentDTO {
   addStudent(Student student, Course course) async {
-    course.students.add(student);
     await studentBox.add(student);
+    course.students.add(student);
     await courseBox.put(course.key, course);
   }
 
