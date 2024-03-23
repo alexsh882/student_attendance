@@ -24,15 +24,9 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, 'courses');
               },
-              child: const Text('Cursos'),
+              child: const Text('Ver Cursos'),
             ),
-            const SizedBox(height: 30),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, 'attendance');
-              },
-              child: const Text('Tomar Asistencia'),
-            ),
+            const SizedBox(height: 30),           
 
           ],
         ),

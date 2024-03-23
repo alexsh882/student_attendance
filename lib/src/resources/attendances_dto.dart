@@ -4,6 +4,7 @@ import 'package:student_attendance/src/models/models.dart';
 
 mixin AttendanceDTO {
   addAttendanceToStudent(Student student, Attendance attendance) async {
+    await attendanceBox.add(attendance);
     student.attendances.add(attendance);
     await studentBox.put(student.key, student);
   }

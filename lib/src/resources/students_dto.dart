@@ -14,6 +14,7 @@ mixin StudentDTO {
 
   deleteStudent(Student student, Course course) async {
     course.students.remove(student);
+    attendanceBox.deleteAll(student.attendances.map((attendance) => attendance.key).toList());
     await studentBox.delete(student.key);
     await courseBox.put(course.key, course);
   }
